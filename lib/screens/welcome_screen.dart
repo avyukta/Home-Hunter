@@ -1,7 +1,24 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:home_hunter/models/AppConstants.dart';
+import 'package:home_hunter/screens/login_screen.dart';
 
-class WelcomePage extends StatelessWidget {
+class WelcomePage extends StatefulWidget {
+  @override
+  _WelcomePageState createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
+  @override
+  void initState() {
+    Timer(Duration(seconds: 2), () {
+      Navigator.pushNamed(context, LoginScreen.routeName);
+    });
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
