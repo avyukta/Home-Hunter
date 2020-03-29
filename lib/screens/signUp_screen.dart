@@ -3,6 +3,8 @@ import 'package:home_hunter/models/AppConstants.dart';
 
 class SignUpScreen extends StatefulWidget {
   static final routeName = '/Sign-UpSignUpen';
+  SignUpScreen({Key key}) : super(key: key);
+
   @override
   _SignUpScreenState createState() => _SignUpScreenState();
 }
@@ -11,41 +13,62 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.black),
+        elevation: 0,
+        // title: Text(
+        //   'Sign Up',
+        //   style: TextStyle(color: Colors.white, fontSize: 18),
+        // ),
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 80, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  'Welcome to ${AppConstants.appName}!',
+                  'Please submit your details below.',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
                   textAlign: TextAlign.center,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 32),
+                  padding: const EdgeInsets.symmetric(vertical: 12),
                   child: Form(
                       child: Column(
                     children: <Widget>[
                       TextFormField(
-                        decoration:
-                            InputDecoration(labelText: 'Username/email'),
+                        decoration: InputDecoration(labelText: 'First name'),
                         style: TextStyle(fontSize: 20),
                       ),
                       TextFormField(
-                        decoration: InputDecoration(labelText: 'Password'),
+                        decoration: InputDecoration(labelText: 'Last name'),
                         style: TextStyle(fontSize: 20),
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'City'),
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Country'),
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Bio'),
+                        style: TextStyle(fontSize: 20),
+                        maxLines: 3,
                       ),
                     ],
                   )),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
+                  padding: const EdgeInsets.only(top: 18.0),
                   child: MaterialButton(
                     onPressed: () {},
                     child: Text(
-                      'Login',
+                      'Submit',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 22,
@@ -58,17 +81,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         borderRadius: BorderRadius.circular(30)),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: FlatButton(
-                      onPressed: () {},
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30)),
-                      child: Text(
-                        'Forgot Password?',
-                        style: TextStyle(fontSize: 16),
-                      )),
-                )
               ],
             ),
           ),

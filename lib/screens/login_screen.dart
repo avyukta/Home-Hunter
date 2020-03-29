@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:home_hunter/models/AppConstants.dart';
+import 'package:home_hunter/screens/guest_home_screen.dart';
 import 'package:home_hunter/screens/signUp_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   static final routeName = '/login-screen';
+  LoginScreen({Key key}) : super(key: key);
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  void _signUp() {
+    Navigator.of(context).pushNamed(SignUpScreen.routeName);
+  }
+
+  void _login() {
+    Navigator.of(context).pushNamed(GuestHomePage.routeName);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +56,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0),
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      _login();
+                    },
                     child: Text(
                       'Login',
                       style: TextStyle(
@@ -65,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: const EdgeInsets.only(top: 15.0),
                   child: MaterialButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed(SignUpScreen.routeName);
+                      _signUp();
                     },
                     child: Text(
                       'Sign Up',
