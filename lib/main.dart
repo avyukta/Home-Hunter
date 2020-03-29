@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_hunter/screens/login_screen.dart';
+import 'package:home_hunter/screens/signUp_screen.dart';
 import 'package:home_hunter/screens/welcome_screen.dart';
 
 void main() => runApp(MyApp());
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       home: WelcomePage(),
       routes: {
         LoginScreen.routeName: (ctx) => LoginScreen(),
+        SignUpScreen.routeName: (ctx) => SignUpScreen(),
       },
     );
   }

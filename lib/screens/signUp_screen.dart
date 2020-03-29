@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:home_hunter/models/AppConstants.dart';
-import 'package:home_hunter/screens/signUp_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  static final routeName = '/login-screen';
+class SignUpScreen extends StatefulWidget {
+  static final routeName = '/Sign-UpSignUpen';
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SignUpScreenState createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,14 +29,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Column(
                     children: <Widget>[
                       TextFormField(
-                        decoration: InputDecoration(
-                            icon: Icon(Icons.person),
-                            labelText: 'Username/email'),
+                        decoration:
+                            InputDecoration(labelText: 'Username/email'),
                         style: TextStyle(fontSize: 20),
                       ),
                       TextFormField(
-                        decoration: InputDecoration(
-                            icon: Icon(Icons.lock), labelText: 'Password'),
+                        decoration: InputDecoration(labelText: 'Password'),
                         style: TextStyle(fontSize: 20),
                       ),
                     ],
@@ -56,26 +53,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     height: MediaQuery.of(context).size.height / 15,
                     color: Colors.lightBlueAccent,
-                    minWidth: double.infinity,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 15.0),
-                  child: MaterialButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed(SignUpScreen.routeName);
-                    },
-                    child: Text(
-                      'Sign Up',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
-                          color: Colors.white),
-                    ),
-                    height: MediaQuery.of(context).size.height / 15,
-                    color: Colors.orangeAccent,
                     minWidth: double.infinity,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30)),
