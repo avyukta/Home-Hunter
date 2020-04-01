@@ -27,9 +27,10 @@ class _GuestHomePageState extends State<GuestHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
-          'Home',
-          style: TextStyle(color: Colors.white, fontSize: 18),
+          listTitles[_selectedIndex],
+          style: TextStyle(color: Colors.white, fontSize: 22),
         ),
       ),
       body: _pages[_selectedIndex],
