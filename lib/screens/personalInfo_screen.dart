@@ -1,21 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:home_hunter/screens/guest_home_screen.dart';
 
-class SignUpScreen extends StatefulWidget {
-  static final routeName = '/Sign-UpSignUpen';
-  SignUpScreen({Key key}) : super(key: key);
+class PersonalInfoScreen extends StatefulWidget {
+  static final routeName = '/Personal-Info-Screen';
+  PersonalInfoScreen({Key key}) : super(key: key);
 
   @override
-  _SignUpScreenState createState() => _SignUpScreenState();
+  _PersonalInfoScreenState createState() => _PersonalInfoScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
         elevation: 0,
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.save),
+              iconSize: 40,
+              onPressed: () {
+                Navigator.of(context).pushNamed(GuestHomePage.routeName);
+              })
+        ],
         // title: Text(
         //   'Sign Up',
         //   style: TextStyle(color: Colors.white, fontSize: 18),
@@ -28,11 +38,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  'Please submit your details below.',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
-                  textAlign: TextAlign.center,
-                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   child: Form(
@@ -44,6 +49,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       TextFormField(
                         decoration: InputDecoration(labelText: 'Last name'),
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Email'),
                         style: TextStyle(fontSize: 20),
                       ),
                       TextFormField(

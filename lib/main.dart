@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:home_hunter/screens/guest_home_screen.dart';
 import 'package:home_hunter/screens/login_screen.dart';
+import 'package:home_hunter/screens/personalInfo_screen.dart';
+import 'package:home_hunter/screens/settings_screen.dart';
 import 'package:home_hunter/screens/signUp_screen.dart';
 import 'package:home_hunter/screens/welcome_screen.dart';
 
@@ -21,6 +23,8 @@ class MyApp extends StatelessWidget {
         LoginScreen.routeName: (ctx) => LoginScreen(),
         SignUpScreen.routeName: (ctx) => SignUpScreen(),
         GuestHomePage.routeName: (ctx) => GuestHomePage(),
+        PersonalInfoScreen.routeName: (ctx) => PersonalInfoScreen(),
+        SettingsScreen.routeName: (ctx) => SettingsScreen(),
       },
     );
   }

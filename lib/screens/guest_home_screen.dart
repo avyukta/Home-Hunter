@@ -14,7 +14,7 @@ class GuestHomePage extends StatefulWidget {
 }
 
 class _GuestHomePageState extends State<GuestHomePage> {
-  var _selectedIndex = 0;
+  var _selectedIndex = 4;
 
   final List<Widget> _pages = [
     ExploreScreen(),
@@ -27,11 +27,34 @@ class _GuestHomePageState extends State<GuestHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        actions: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                  width: MediaQuery.of(context).size.width / 1.7,
+                  child: listTitles[_selectedIndex] == 'Explore'
+                      ? TextField(
+                          style: TextStyle(color: Colors.white),
+                          cursorColor: Colors.white,
+                          decoration: InputDecoration(
+                            hintText: 'Search',
+                            hintStyle: TextStyle(color: Colors.white),
+                            prefixIcon: Icon(
+                              Icons.search,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
+                      : null),
+            ],
+          )
+        ],
         title: Text(
           listTitles[_selectedIndex],
           style: TextStyle(color: Colors.white, fontSize: 22),
         ),
+        automaticallyImplyLeading: false,
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
