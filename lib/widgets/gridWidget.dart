@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating/flutter_rating.dart';
 
 class PostingGridTile extends StatefulWidget {
   @override
@@ -7,6 +8,8 @@ class PostingGridTile extends StatefulWidget {
 }
 
 class _PostingGridTileState extends State<PostingGridTile> {
+  double rating = 3.5;
+  int starCount = 5;
   String imageurl =
       'https://www.crismatec.com/python/ho/pretty-house-design-inside-simple-home-style-room-ideas_home-elements-and-style.jpg';
   @override
@@ -36,19 +39,20 @@ class _PostingGridTileState extends State<PostingGridTile> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Icon(Icons.schedule),
-                    SizedBox(width: 6),
                     AutoSizeText(
                       'Apartment-Vancoub',
                       overflow: TextOverflow.fade,
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Icon(Icons.work),
-                    SizedBox(width: 6),
                     AutoSizeText('Awesome Apartment'),
                   ],
                 ),
@@ -58,6 +62,18 @@ class _PostingGridTileState extends State<PostingGridTile> {
                     SizedBox(width: 6),
                     AutoSizeText('\$120 / night'),
                   ],
+                ),
+                StarRating(
+                  size: 20.0,
+                  rating: rating,
+                  color: Colors.orange,
+                  borderColor: Colors.grey,
+                  starCount: starCount,
+                  onRatingChanged: (rating) => setState(
+                    () {
+                      this.rating = rating;
+                    },
+                  ),
                 ),
               ],
             ),
